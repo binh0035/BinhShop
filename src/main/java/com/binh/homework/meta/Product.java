@@ -7,9 +7,18 @@ public class Product {
     private int id;
     private String title;
     private String image;
-    private int price;
+    private long price;
     private boolean isBuy;
     private boolean isSell;
+
+    public Product(int id, String title, String image, long price) {
+        this.id = id;
+        this.title = title;
+        this.image = image;
+        this.price = price;
+        isBuy = false;
+        isSell = false;
+    }
 
     public int getId() {
         return id;
@@ -35,11 +44,11 @@ public class Product {
         this.image = image;
     }
 
-    public int getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
