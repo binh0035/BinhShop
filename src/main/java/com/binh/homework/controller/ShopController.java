@@ -1,12 +1,12 @@
 package com.binh.homework.controller;
 
-import com.binh.homework.dao.ContentDao;
-import com.binh.homework.dao.PersonDao;
-import com.binh.homework.dao.TrxDao;
+import com.binh.homework.dao.ProductDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IPersonService;
+import com.binh.homework.service.IProductService;
 import com.binh.homework.service.impl.PersonServiceImpl;
-import com.binh.homework.utils.Utils;
+import com.binh.homework.service.impl.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,20 +27,26 @@ import java.util.List;
 @Controller
 public class ShopController {
 
+
+    private IPersonService mPersonService = new PersonServiceImpl();
+
+    private IProductService mProductService = new ProductServiceImpl();
+
     // OK
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request, ModelMap map) {
-        Utils.checkUser(request, map);
+        mPersonService.checkUser(request, map);
         return "login";
     }
 
     // OK
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession();
-        String userName = (String) session.getAttribute("userName");
-        if (userName != null) {
+    public void logout(HttpServletRequest request, HttpServletResponse response, ModelMap map) throws IOException {
+        Person person = mPersonService.checkUser(request, map);
+        if (person != null) {
+            HttpSession session = request.getSession();
             session.invalidate();
+            //session.setAttribute("userName", null);
         }
         response.sendRedirect("/login");
     }
@@ -49,59 +54,94 @@ public class ShopController {
     // 可优化
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(HttpServletRequest request, ModelMap map) {
-        Utils.checkUser(request, map);
+        Person person = mPersonService.checkUser(request, map);
 
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ContentDao contentDao = context.getBean("contentDao", ContentDao.class);
-        List<Content> contentList = contentDao.getContentList();
-        TrxDao trxDao = context.getBean("trxDao", TrxDao.class);
-        List<Trx> trxList;
-        List<Product> productList = new ArrayList<>();
-        Product product;
-        for (Content content : contentList) {
-            product = new Product(content.getId(), content.getTitle(), content.getIcon().toString(), content.getPrice());
-            trxList = trxDao.getTrxByContentId(content.getId());
-            product.setSell(trxList.size() > 0);
-            if (product.isSell() && map.get("user") != null) {
-                PersonDao personDao = context.getBean("personDao", PersonDao.class);
-                Person person = personDao.getPersonByName(((User)map.get("user")).getUsername());
-                trxList = trxDao.getTrxByContentIdPersonId(content.getId(), person.getId());
-                product.setBuy(trxList.size() > 0);
-            }
-            productList.add(product);
-        }
-
+        List<ProductIndex> productList = mProductService.getProductIndex(request, person);
         map.addAttribute("productList", productList);
         return "index";
     }
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
-    public String show(ModelMap map) {
+    public String show(HttpServletRequest request, ModelMap map) {
+        Person person = mPersonService.checkUser(request, map);
+
+        int productId = Integer.valueOf( request.getParameter("id") );
+        ProductShow productShow = mProductService.getProductShow(request, person, productId);
+        map.addAttribute("product", productShow);
         return "show";
     }
 
     @RequestMapping(value = "/account", method = RequestMethod.GET)
-    public String account(ModelMap map) {
+    public String account(HttpServletRequest request, ModelMap map) {
+        Person person = mPersonService.checkUser(request, map);
+
+        List<ProductAccount> productAccountList = mProductService.getProductAccount(request, person);
+        map.addAttribute("buyList", productAccountList);
+
         return "account";
     }
 
+    // OK
     @RequestMapping(value = "/public", method = RequestMethod.GET)
-    public String publicProduct(ModelMap map) {
+    public String publicProduct(HttpServletRequest request, ModelMap map) {
+        mPersonService.checkUser(request, map);
         return "public";
     }
 
     @RequestMapping(value = "/publicSubmit", method = RequestMethod.POST)
-    public String publicSubmit(ModelMap map) {
+    public String publicSubmit(HttpServletRequest request, ModelMap map) {
+        mPersonService.checkUser(request, map);
+        String title = request.getParameter("title");
+        String image = request.getParameter("image");
+        String detail = request.getParameter("detail");
+        long price = Long.parseLong(request.getParameter("price"));
+        String summary = request.getParameter("summary");
+
+        Product product = new Product(title, summary, detail, image, price);
+        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+        ProductDao dao = context.getBean("productDao", ProductDao.class);
+        int result = dao.insertProduct(product);
+
+        if (result > 0) {
+            map.addAttribute("product", product);
+        }
+
         return "publicSubmit";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public String edit(ModelMap map) {
+    public String edit(HttpServletRequest request, ModelMap map) {
+        mPersonService.checkUser(request, map);
+        int productId = Integer.valueOf( request.getParameter("id") );
+        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+        ProductDao dao = context.getBean("productDao", ProductDao.class);
+        Product product = dao.getProduct(productId);
+
+        map.addAttribute("product", product);
+
         return "edit";
     }
 
     @RequestMapping(value = "/editSubmit", method = RequestMethod.POST)
-    public String editSubmit(ModelMap map) {
+    public String editSubmit(HttpServletRequest request, ModelMap map) {
+        mPersonService.checkUser(request, map);
+        int id = Integer.valueOf(request.getParameter("id"));
+        String title = request.getParameter("title");
+        String image = request.getParameter("image");
+        String detail = request.getParameter("detail");
+        long price = Long.parseLong(request.getParameter("price"));
+        String summary = request.getParameter("summary");
+
+        Product product = new Product(title, summary, detail, image, price);
+        product.setId(id);
+
+        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+        ProductDao dao = context.getBean("productDao", ProductDao.class);
+        int result = dao.updateProduct(product);
+        if (result > 0) {
+            map.addAttribute("product", product);
+        }
+
         return "editSubmit";
     }
 }

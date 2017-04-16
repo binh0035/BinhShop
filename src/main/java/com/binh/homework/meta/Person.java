@@ -26,6 +26,9 @@ public class Person {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+    public void setUsername(String userName) {
+        this.userName = userName;
+    }
 
     public String getPassword() {
         return password;
@@ -44,6 +47,9 @@ public class Person {
     }
 
     public int getUserType() {
+        return userType;
+    }
+    public int getUsertype() {
         return userType;
     }
 

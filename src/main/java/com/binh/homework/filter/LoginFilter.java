@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpSession session = req.getSession();
-        if (session.getAttribute("username") == null) {
+        if (session.getAttribute("userName") == null) {
             HttpServletResponse res = (HttpServletResponse) servletResponse;
             res.sendRedirect("/login");
         } else {

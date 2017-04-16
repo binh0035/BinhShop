@@ -7,6 +7,11 @@ public class User {
     private String username;
     private int usertype;
 
+    public User(Person person) {
+        this.username = person.getUserName();
+        usertype = person.getUserType();
+    }
+
     public String getUsername() {
         return username;
     }

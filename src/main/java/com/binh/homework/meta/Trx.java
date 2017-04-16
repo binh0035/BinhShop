@@ -7,8 +7,20 @@ public class Trx {
     private int id;
     private int contentId;
     private int personId;
-    private int prince;
-    private int time;
+    private int price;
+    private long time;
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+        if (obj != null) {
+            Trx trx = (Trx) obj;
+            if (trx.getId() == id && trx.getContentId() == contentId && trx.getPersonId() == personId && trx.getPrice() == price && trx.getTime() == time) {
+                result = true;
+            }
+        }
+        return result;
+    }
 
     public int getId() {
         return id;
@@ -34,19 +46,19 @@ public class Trx {
         this.personId = personId;
     }
 
-    public int getPrince() {
-        return prince;
+    public int getPrice() {
+        return price;
     }
 
-    public void setPrince(int prince) {
-        this.prince = prince;
+    public void setPrice(int prince) {
+        this.price = prince;
     }
 
-    public int getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(long time) {
         this.time = time;
     }
 }

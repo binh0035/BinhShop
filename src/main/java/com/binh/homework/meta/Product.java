@@ -1,23 +1,25 @@
 package com.binh.homework.meta;
 
 /**
- * Created by binh on 2017/3/23.
+ * Created by binh on 2017/4/12.
  */
 public class Product {
     private int id;
     private String title;
+    private String summary;
+    private String detail;
     private String image;
     private long price;
-    private boolean isBuy;
-    private boolean isSell;
 
-    public Product(int id, String title, String image, long price) {
-        this.id = id;
+    public Product(){
+
+    }
+    public Product(String title, String summary, String detail, String image, long price) {
         this.title = title;
+        this.summary = summary;
+        this.detail = detail;
         this.image = image;
         this.price = price;
-        isBuy = false;
-        isSell = false;
     }
 
     public int getId() {
@@ -36,6 +38,22 @@ public class Product {
         this.title = title;
     }
 
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
     public String getImage() {
         return image;
     }
@@ -50,21 +68,5 @@ public class Product {
 
     public void setPrice(long price) {
         this.price = price;
-    }
-
-    public boolean isBuy() {
-        return isBuy;
-    }
-
-    public void setBuy(boolean buy) {
-        isBuy = buy;
-    }
-
-    public boolean isSell() {
-        return isSell;
-    }
-
-    public void setSell(boolean sell) {
-        isSell = sell;
     }
 }
