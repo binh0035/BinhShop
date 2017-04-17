@@ -144,4 +144,11 @@ public class ShopController {
 
         return "editSubmit";
     }
+
+    @RequestMapping(value = "/settleAccount", method = RequestMethod.GET)
+    public String settleAccount(HttpServletRequest request, ModelMap map) {
+        mPersonService.checkUser(request, map);
+
+        return "settleAccount";
+    }
 }

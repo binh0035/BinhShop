@@ -1,6 +1,7 @@
 package com.binh.homework.dao;
 
 import com.binh.homework.meta.Trx;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -26,4 +27,7 @@ public interface TrxDao {
 
     @Select("select * from Trx where personId=#{personId}")
     public List<Trx> getTrxByPersonId(@Param("personId") int personId);
+
+    @Insert("insert into trx (contentId, personId, price, time) values (#{contentId}, #{personId}, #{price}, #{time})")
+    public int insertTrx(Trx trx);
 }
