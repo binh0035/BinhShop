@@ -1,7 +1,6 @@
 package com.binh.homework.service;
 
 import com.binh.homework.meta.Person;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;

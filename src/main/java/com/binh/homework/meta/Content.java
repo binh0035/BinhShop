@@ -1,7 +1,5 @@
 package com.binh.homework.meta;
 
-import java.math.BigInteger;
-
 /**
  * Created by binh on 2017/4/9.
  */

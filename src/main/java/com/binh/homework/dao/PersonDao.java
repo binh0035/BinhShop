@@ -4,8 +4,6 @@ import com.binh.homework.meta.Person;
 import com.binh.homework.meta.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by binh on 2017/4/10.

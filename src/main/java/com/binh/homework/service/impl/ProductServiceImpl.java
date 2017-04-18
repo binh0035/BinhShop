@@ -1,13 +1,9 @@
 package com.binh.homework.service.impl;
 
-import com.binh.homework.dao.PersonDao;
 import com.binh.homework.dao.ProductDao;
 import com.binh.homework.dao.TrxDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IProductService;
-import org.apache.ibatis.mapping.ResultMap;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 

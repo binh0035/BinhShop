@@ -9,25 +9,19 @@ import com.binh.homework.service.IPersonService;
 import com.binh.homework.service.IProductService;
 import com.binh.homework.service.impl.PersonServiceImpl;
 import com.binh.homework.service.impl.ProductServiceImpl;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.multipart.MultipartFile;
-import sun.nio.ch.IOUtil;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by binh on 2017/4/8.
@@ -104,7 +98,7 @@ public class ApiController {
             for (int i = 0; i < buyItem.getNumber(); i++) {
                 result = trxDao.insertTrx(trx);
                 if (result > 0) {
-                    succNum ++;
+                    succNum++;
                 }
                 allNum++;
             }
@@ -123,7 +117,7 @@ public class ApiController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public UploadMessage upload(HttpServletRequest request, ModelMap map, @RequestParam("file")MultipartFile file) throws IOException {
+    public UploadMessage upload(HttpServletRequest request, ModelMap map, @RequestParam("file") MultipartFile file) throws IOException {
         UploadMessage message;
         mPersonService.checkUser(request, map);
         //int id = Integer.valueOf(request.getParameter("id"));

@@ -4,7 +4,6 @@ import com.binh.homework.meta.Person;
 import com.binh.homework.meta.ProductAccount;
 import com.binh.homework.meta.ProductIndex;
 import com.binh.homework.meta.ProductShow;
-import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
