@@ -12,9 +12,6 @@ import java.util.List;
  */
 public interface TrxDao {
 
-    @Select("select * from Trx where contentId=#{contentId}")
-    public List<Trx> getTrxByContentId(@Param("contentId") int contentId);
-
     @Select("select * from Trx where contentId=#{contentId} and personId=#{personId}")
     public List<Trx> getTrxByContentIdPersonId(@Param("contentId") int contentId, @Param("personId") int personId);
 

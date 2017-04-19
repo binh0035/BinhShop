@@ -6,9 +6,7 @@ import com.binh.homework.dao.ProductDao;
 import com.binh.homework.dao.TrxDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IPersonService;
-import com.binh.homework.service.IProductService;
 import com.binh.homework.service.impl.PersonServiceImpl;
-import com.binh.homework.service.impl.ProductServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +28,6 @@ import java.util.List;
 @RequestMapping("/api")
 public class ApiController {
     IPersonService mPersonService = new PersonServiceImpl();
-    IProductService mProductService = new ProductServiceImpl();
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
@@ -39,14 +36,13 @@ public class ApiController {
         String password = request.getParameter("password");
 
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        PersonDao dao = context.getBean("personDao", PersonDao.class);
-        Person person = dao.getPerson(userName, password);
+        PersonDao personDao = context.getBean("personDao", PersonDao.class);
+        Person person = personDao.getPerson(userName, password);
 
         HttpSession session = request.getSession();
         ReturnMessage message;
         if (person != null) {
             session.setAttribute("userName", userName);
-            //session.setAttribute("password", password);
             message = new ReturnMessage(200, "", true);
         } else {
             session.invalidate();
@@ -62,8 +58,8 @@ public class ApiController {
         mPersonService.checkUser(request, map);
         int productId = Integer.valueOf(request.getParameter("id"));
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao dao = context.getBean("productDao", ProductDao.class);
-        int result = dao.delete(productId);
+        ProductDao productDao = context.getBean("productDao", ProductDao.class);
+        int result = productDao.delete(productId);
         ReturnMessage message;
         if (result > 0) {
             message = new ReturnMessage(200, "", true);
@@ -75,7 +71,7 @@ public class ApiController {
 
     @RequestMapping(value = "/buy", method = RequestMethod.POST)
     @ResponseBody
-    public ReturnMessage buy(HttpServletRequest request, ModelMap map, @RequestBody String param) throws IOException {
+    public ReturnMessage buy (HttpServletRequest request, ModelMap map, @RequestBody String param) throws IOException {
         ReturnMessage message;
         Person person = mPersonService.checkUser(request, map);
 
@@ -117,19 +113,27 @@ public class ApiController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public UploadMessage upload(HttpServletRequest request, ModelMap map, @RequestParam("file") MultipartFile file) throws IOException {
+    public UploadMessage upload(HttpServletRequest request, ModelMap map, @RequestParam("file") MultipartFile file) {
         UploadMessage message;
         mPersonService.checkUser(request, map);
-        //int id = Integer.valueOf(request.getParameter("id"));
-        //String url = request.getParameter("url");
-        //System.out.println("id:" + id + "; " + url);
 
-        String savePath = request.getServletContext().getRealPath("/") + "/uploadImage" + file.getOriginalFilename();
+        String oldfileName = file.getOriginalFilename();
+        String[] names = oldfileName.split("\\.");
+        String fileName = String.valueOf((new Date()).getTime());
+        if (names.length > 0) {
+            fileName = fileName + "." + names[names.length - 1];
+        }
+        fileName = "/image/" + fileName;
+        String savePath = request.getServletContext().getRealPath("/") + fileName;
         File saveFile = new File(savePath);
-        file.transferTo(saveFile);
+        try {
+            file.transferTo(saveFile);
+            message = new UploadMessage(200, "", fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+            message = new UploadMessage(400, "上传失败", fileName);
+        }
 
-        String path = "/uploadImage" + file.getOriginalFilename();
-        message = new UploadMessage(200, "", path);
         return message;
     }
 }

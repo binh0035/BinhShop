@@ -26,19 +26,15 @@ import java.util.List;
 @Controller
 public class ShopController {
 
-
     private IPersonService mPersonService = new PersonServiceImpl();
-
     private IProductService mProductService = new ProductServiceImpl();
 
-    // OK
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request, ModelMap map) {
         mPersonService.checkUser(request, map);
         return "login";
     }
 
-    // OK
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public void logout(HttpServletRequest request, HttpServletResponse response, ModelMap map) throws IOException {
         Person person = mPersonService.checkUser(request, map);
@@ -50,7 +46,6 @@ public class ShopController {
         response.sendRedirect("/login");
     }
 
-    // 可优化
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(HttpServletRequest request, ModelMap map) {
         Person person = mPersonService.checkUser(request, map);
@@ -98,10 +93,11 @@ public class ShopController {
 
         Product product = new Product(title, summary, detail, image, price);
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao dao = context.getBean("productDao", ProductDao.class);
-        int result = dao.insertProduct(product);
+        ProductDao productDao = context.getBean("productDao", ProductDao.class);
+        int result = productDao.insertProduct(product);
 
         if (result > 0) {
+            product.setId(productDao.getLastInsertId());
             map.addAttribute("product", product);
         }
 
@@ -113,8 +109,8 @@ public class ShopController {
         mPersonService.checkUser(request, map);
         int productId = Integer.valueOf( request.getParameter("id") );
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao dao = context.getBean("productDao", ProductDao.class);
-        Product product = dao.getProduct(productId);
+        ProductDao productDao = context.getBean("productDao", ProductDao.class);
+        Product product = productDao.getProduct(productId);
 
         map.addAttribute("product", product);
 
@@ -135,8 +131,8 @@ public class ShopController {
         product.setId(id);
 
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao dao = context.getBean("productDao", ProductDao.class);
-        int result = dao.updateProduct(product);
+        ProductDao productDao = context.getBean("productDao", ProductDao.class);
+        int result = productDao.updateProduct(product);
         if (result > 0) {
             map.addAttribute("product", product);
         }

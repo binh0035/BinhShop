@@ -35,6 +35,9 @@ public interface ProductDao {
     @Insert("insert into content (title, abstract, text, icon, price) values (#{title}, #{summary}, #{detail}, #{image}, #{price})")
     public int insertProduct(Product product);
 
+    @Select("select last_insert_id()")
+    public int getLastInsertId();
+
     @Update("update content set title=#{title}, abstract=#{summary}, text=#{detail}, icon=#{image}, price=#{price} where id=#{id}")
     public int updateProduct(Product product);
 

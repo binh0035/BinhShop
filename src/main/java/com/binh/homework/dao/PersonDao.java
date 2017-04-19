@@ -1,7 +1,6 @@
 package com.binh.homework.dao;
 
 import com.binh.homework.meta.Person;
-import com.binh.homework.meta.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,7 +15,4 @@ public interface PersonDao {
 
     @Select("select * from person where userName=#{userName}")
     public Person getPersonByName(@Param("userName")String userName);
-
-    @Select("select username,usertype from person where userName=#{userName}")
-    public User getUser(@Param("userName")String userName);
 }
