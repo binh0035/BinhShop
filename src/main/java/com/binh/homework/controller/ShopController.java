@@ -1,17 +1,13 @@
 package com.binh.homework.controller;
 
-import com.binh.homework.dao.ProductDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IPersonService;
 import com.binh.homework.service.IProductService;
-import com.binh.homework.service.impl.PersonServiceImpl;
-import com.binh.homework.service.impl.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,8 +22,10 @@ import java.util.List;
 @Controller
 public class ShopController {
 
-    private IPersonService mPersonService = new PersonServiceImpl();
-    private IProductService mProductService = new ProductServiceImpl();
+    @Autowired
+    private IPersonService mPersonService;
+    @Autowired
+    private IProductService mProductService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(HttpServletRequest request, ModelMap map) {
@@ -92,14 +90,9 @@ public class ShopController {
         String summary = request.getParameter("summary");
 
         Product product = new Product(title, summary, detail, image, price);
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
-        int result = productDao.insertProduct(product);
+        product = mProductService.insertProduct(product);
 
-        if (result > 0) {
-            product.setId(productDao.getLastInsertId());
-            map.addAttribute("product", product);
-        }
+        map.addAttribute("product", product);
 
         return "publicSubmit";
     }
@@ -108,11 +101,11 @@ public class ShopController {
     public String edit(HttpServletRequest request, ModelMap map) {
         mPersonService.checkUser(request, map);
         int productId = Integer.valueOf( request.getParameter("id") );
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
-        Product product = productDao.getProduct(productId);
+
+        Product product = mProductService.getProductById(productId);
 
         map.addAttribute("product", product);
+        System.out.println(product.getDetail());
 
         return "edit";
     }
@@ -130,12 +123,9 @@ public class ShopController {
         Product product = new Product(title, summary, detail, image, price);
         product.setId(id);
 
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
-        int result = productDao.updateProduct(product);
-        if (result > 0) {
-            map.addAttribute("product", product);
-        }
+        product = mProductService.updateProduct(product);
+
+        map.addAttribute("product", product);
 
         return "editSubmit";
     }

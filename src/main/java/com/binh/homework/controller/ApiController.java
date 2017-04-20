@@ -6,12 +6,10 @@ import com.binh.homework.dao.ProductDao;
 import com.binh.homework.dao.TrxDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IPersonService;
-import com.binh.homework.service.impl.PersonServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +25,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/api")
 public class ApiController {
-    IPersonService mPersonService = new PersonServiceImpl();
+
+    @Autowired
+    private IPersonService mPersonService;
+    @Autowired
+    private PersonDao personDao;
+    @Autowired
+    private ProductDao productDao;
+    @Autowired
+    private TrxDao trxDao;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
@@ -35,8 +41,6 @@ public class ApiController {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
 
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        PersonDao personDao = context.getBean("personDao", PersonDao.class);
         Person person = personDao.getPerson(userName, password);
 
         HttpSession session = request.getSession();
@@ -57,8 +61,7 @@ public class ApiController {
     public ReturnMessage delete(HttpServletRequest request, ModelMap map) {
         mPersonService.checkUser(request, map);
         int productId = Integer.valueOf(request.getParameter("id"));
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
+
         int result = productDao.delete(productId);
         ReturnMessage message;
         if (result > 0) {
@@ -77,10 +80,6 @@ public class ApiController {
 
         JSONObject jo = new JSONObject();
         List<BuyItem> buyList = jo.parseArray(param, BuyItem.class);
-
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        TrxDao trxDao = context.getBean("trxDao", TrxDao.class);
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
 
         Trx trx;
         int succNum = 0, allNum = 0, result;

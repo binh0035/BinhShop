@@ -4,8 +4,8 @@ import com.binh.homework.dao.ProductDao;
 import com.binh.homework.dao.TrxDao;
 import com.binh.homework.meta.*;
 import com.binh.homework.service.IProductService;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -14,17 +14,18 @@ import java.util.List;
 /**
  * Created by binh on 2017/4/15.
  */
+@Service("mProductService")
 public class ProductServiceImpl implements IProductService {
+
+    @Autowired
+    private ProductDao productDao;
+    @Autowired
+    private TrxDao trxDao;
 
     @Override
     public List<ProductIndex> getProductIndex(HttpServletRequest request, Person person) {
         List<ProductIndex> productIndexList = new ArrayList<>();
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
         List<Product> productList = productDao.getProductList();
-
-        TrxDao trxDao = context.getBean("trxDao", TrxDao.class);
-
         ProductIndex productIndex;
         for (Product product : productList) {
             productIndex = new ProductIndex(product);
@@ -40,12 +41,8 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public ProductShow getProductShow(HttpServletRequest request, Person person, int productId) {
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
         Product product = productDao.getProduct(productId);
         ProductShow productShow = new ProductShow(product);
-
-        TrxDao trxDao = context.getBean("trxDao", TrxDao.class);
 
         if (person != null && person.getUserType() == 0) {
             List<Trx> trxList = trxDao.getTrxByContentIdPersonId(productId, person.getId());
@@ -70,10 +67,6 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public List<ProductAccount> getProductAccount(HttpServletRequest request, Person person) {
         List<ProductAccount> productAccountList = new ArrayList<>();
-
-        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
-        ProductDao productDao = context.getBean("productDao", ProductDao.class);
-        TrxDao trxDao = context.getBean("trxDao", TrxDao.class);
 
         ProductAccount productAccount;
         Product product;
@@ -105,5 +98,33 @@ public class ProductServiceImpl implements IProductService {
             }
         }
         return productAccountList;
+    }
+
+    @Override
+    public Product insertProduct(Product product) {
+
+        int result = productDao.insertProduct(product);
+
+        if (result > 0) {
+            product.setId(productDao.getLastInsertId());
+        } else {
+            product = null;
+        }
+        return product;
+    }
+
+    @Override
+    public Product getProductById(int id) {
+        Product product = productDao.getProduct(id);
+        return product;
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        int result = productDao.updateProduct(product);
+        if (result <= 0) {
+            product = null;
+        }
+        return product;
     }
 }

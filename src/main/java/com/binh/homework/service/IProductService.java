@@ -1,9 +1,6 @@
 package com.binh.homework.service;
 
-import com.binh.homework.meta.Person;
-import com.binh.homework.meta.ProductAccount;
-import com.binh.homework.meta.ProductIndex;
-import com.binh.homework.meta.ProductShow;
+import com.binh.homework.meta.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -17,4 +14,10 @@ public interface IProductService {
     public ProductShow getProductShow(HttpServletRequest request, Person person, int productId);
 
     public List<ProductAccount> getProductAccount(HttpServletRequest request, Person person);
+
+    public Product insertProduct(Product product);
+
+    Product getProductById(int id);
+
+    Product updateProduct(Product product);
 }

@@ -1,6 +1,7 @@
 package com.binh.homework.dao;
 
 import com.binh.homework.meta.Product;
+import com.binh.homework.utils.MyBlobTypeHandler;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface ProductDao {
             @Result(property = "id", column = "id"),
             @Result(property = "title", column = "title"),
             @Result(property = "summary", column = "abstract"),
-            @Result(property = "detail", column = "text"),
+            @Result(property = "detail", column = "text", typeHandler = MyBlobTypeHandler.class),
             @Result(property = "image", column = "icon"),
             @Result(property = "price", column = "price")
     })
@@ -25,7 +26,7 @@ public interface ProductDao {
             @Result(property = "id", column = "id"),
             @Result(property = "title", column = "title"),
             @Result(property = "summary", column = "abstract"),
-            @Result(property = "detail", column = "text"),
+            @Result(property = "detail", column = "text", typeHandler = MyBlobTypeHandler.class),
             @Result(property = "image", column = "icon"),
             @Result(property = "price", column = "price")
     })
