@@ -2,97 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16b0f048-ad70-4017-9799-79dc7a11e239" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/controller/ApiController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/controller/ShopController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/dao/ContentDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/dao/PersonDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/dao/ProductDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/dao/TrxDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/filter/LoginFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/BuyItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/Person.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/Product.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/ProductAccount.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/ProductIndex.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/ProductShow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/ReturnMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/Trx.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/UploadMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/meta/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/service/IPersonService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/service/IProductService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/service/impl/PersonServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/service/impl/ProductServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/com/binh/homework/utils/MyBlobTypeHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/db.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/spring-mvc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/classes/spring-mybatis.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/aspectjweaver-1.8.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/commons-dbcp-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/commons-fileupload-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/commons-io-2.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/commons-pool-1.5.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/fastjson-1.1.15.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/jackson-annotations-2.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/jackson-core-2.6.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/jackson-databind-2.6.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/mybatis-3.3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/mybatis-spring-1.2.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/mysql-connector-java-5.1.25.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-aop-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-beans-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-context-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-context-support-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-core-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-expression-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-jdbc-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-tx-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-web-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/lib/spring-webmvc-4.2.1.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/account.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/edit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/editSubmit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/public.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/publicSubmit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/settleAccount.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/html/show.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/image/test1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/global.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/md5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/pageIndex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/pageLogin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/pageShow.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/public.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/js/settleAccount.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/account.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/edit.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/editSubmit.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/include/footer.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/include/head.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/include/header.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/include/support.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/index.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/login.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/public.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/publicSubmit.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/settleAccount.ftl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/binh-shop/template/show.ftl" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/binh/homework/controller/ApiController.class" afterPath="$PROJECT_DIR$/target/classes/com/binh/homework/controller/ApiController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/binh/homework/controller/ShopController.class" afterPath="$PROJECT_DIR$/target/classes/com/binh/homework/controller/ShopController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/binh/homework/dao/TrxDao.class" afterPath="$PROJECT_DIR$/target/classes/com/binh/homework/dao/TrxDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/binh/homework/service/impl/PersonServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/binh/homework/service/impl/PersonServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/binh/homework/dao/TrxDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/binh/homework/dao/TrxDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -119,11 +29,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/binh/homework/dao/ProductDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="285">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/binh/homework/controller/ApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-916">
+              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -181,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/service/IPersonService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/meta/Content.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/dao/PersonDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/service/IProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/service/impl/ProductServiceImpl.java" />
@@ -191,6 +120,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/controller/ShopController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/service/impl/PersonServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/binh/homework/dao/TrxDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
       </list>
     </option>
   </component>
@@ -220,8 +150,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="167" />
-    <option name="y" value="55" />
+    <option name="x" value="126" />
+    <option name="y" value="62" />
     <option name="width" value="1407" />
     <option name="height" value="870" />
   </component>
@@ -243,8 +173,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,11 +222,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,9 +322,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinhShop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -881,14 +877,15 @@
       <workItem from="1492772979257" duration="416000" />
       <workItem from="1492779408768" duration="41000" />
       <workItem from="1492779480932" duration="109000" />
+      <workItem from="1492786143958" duration="185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79926000" />
+    <option name="totallyTimeSpent" value="80111000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="167" y="55" width="1407" height="870" extended-state="0" />
+    <frame x="126" y="62" width="1407" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -910,8 +907,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30586767" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30586767" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1163,14 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1183,13 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="62" column="14" lean-forward="false" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/binh/homework/controller/ApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1281,8 +1263,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/binh/homework/dao/ProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="285">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/binh/homework/controller/ApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-916">
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding />
         </state>
       </provider>
